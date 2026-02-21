@@ -98,13 +98,7 @@
                 <button id="open-modal-btn"
                     class="bg-primary text-white w-full px-4 mt-4 py-2 rounded-full">Transferir</button>
             </div>
-            <div class="md:w-1/2">
-                <h2 class="text-xl font-bold text-primary dark:text-white">Pagamentos</h2>
-                <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Faça pagamentos de forma segura e rápida</p>
-                <button id="open-payments-modal-btn"
-                    class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Pagar</button>
-            </div>
-
+       
             <div class="md:w-1/2">
                 <h2 class="text-xl font-bold text-primary dark:text-white">Consultas</h2>
                 <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Cheque o seu saldo de forma segura e rápida</p>
@@ -114,12 +108,7 @@
         </div>
 
         <div class="md:flex justify-center items-center gap-2 mt-10 p-2">
-            <div class="md:w-1/2">
-                <h2 class="text-xl font-bold text-primary dark:text-white">Levantamento</h2>
-                <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Faça levantamentos de forma segura</p>
-                <button id="open-withdraw-modal-btn"
-                    class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Levantar</button>
-            </div>
+           
             <div class="md:w-1/2">
                 <h2 class="text-xl font-bold text-primary dark:text-white">Extrato</h2>
                 <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Faça extratos de forma segura e rápida</p>
@@ -133,12 +122,7 @@
                 <button id="open-deposit-modal-btn"
                     class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Depositar</button>
             </div>
-            <div class="md:w-1/2">
-                <h2 class="text-xl font-bold text-primary dark:text-white">Serviços do cartao</h2>
-                <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Altere o Pin e outros servicos disponiveis</p>
-                <button id="open-services-modal-btn"
-                    class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Serviços</button>
-            </div>
+           
         </div>
     </main>
 
@@ -344,42 +328,7 @@
         </div>
     </div>
 
-    <!-- Modal de Pagamentos -->
-    <div id="payments-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-payments"
-        role="dialog" aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div id="payments-overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-                aria-hidden="true"></div>
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-            <div
-                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="sm:flex sm:items-start">
-                        <div
-                            class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 sm:mx-0 sm:h-10 sm:w-10">
-                            <span class="material-symbols-outlined text-primary dark:text-white">payments</span>
-                        </div>
-                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
-                                id="modal-title-payments">Pagamentos</h3>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Realize pagamentos de serviços.</p>
-                            <form class="mt-4 space-y-3">
-                                <input type="text" placeholder="Entidade" class="rounded-full w-full">
-                                <input type="text" placeholder="Referência" class="rounded-full w-full">
-                                <input type="text" placeholder="Montante" class="rounded-full w-full">
-                                <div class="flex gap-2 mt-4">
-                                    <button type="button"
-                                        class="bg-primary text-white px-4 py-2 rounded-full">Confirmar</button>
-                                    <button id="close-payments-modal-btn" type="button"
-                                        class="border border-primary text-primary px-4 py-2 rounded-full">Fechar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  
 
     <!-- Modal de Consultas -->
     <div id="inquiries-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-inquiries"
@@ -417,42 +366,7 @@
         </div>
     </div>
 
-    <!-- Modal de Levantamento -->
-    <div id="withdraw-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-withdraw"
-        role="dialog" aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div id="withdraw-overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-                aria-hidden="true"></div>
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-            <div
-                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="sm:flex sm:items-start">
-                        <div
-                            class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 sm:mx-0 sm:h-10 sm:w-10">
-                            <span class="material-symbols-outlined text-primary dark:text-white">atm</span>
-                        </div>
-                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
-                                id="modal-title-withdraw">Levantamento sem Cartão</h3>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Gere um código para levantamento.
-                            </p>
-                            <form class="mt-4 space-y-3">
-                                <input type="text" placeholder="Montante" class="rounded-full w-full">
-                                <div class="flex gap-2 mt-4">
-                                    <button type="button" class="bg-primary text-white px-4 py-2 rounded-full">Gerar
-                                        Código</button>
-                                    <button id="close-withdraw-modal-btn" type="button"
-                                        class="border border-primary text-primary px-4 py-2 rounded-full">Fechar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+  
     <!-- Modal de Extrato -->
     <div id="statement-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-statement"
         role="dialog" aria-modal="true">
@@ -527,45 +441,6 @@
         </div>
     </div>
 
-    <!-- Modal de Serviços -->
-    <div id="services-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-services"
-        role="dialog" aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div id="services-overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-                aria-hidden="true"></div>
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-            <div
-                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
-                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                    <div class="sm:flex sm:items-start">
-                        <div
-                            class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 sm:mx-0 sm:h-10 sm:w-10">
-                            <span class="material-symbols-outlined text-primary dark:text-white">settings</span>
-                        </div>
-                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
-                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
-                                id="modal-title-services">Serviços do Cartão</h3>
-                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Gerencie o seu cartão.</p>
-                            <div class="mt-4 flex flex-col gap-2">
-                                <button
-                                    class="bg-primary text-white px-4 py-2 rounded-full w-full text-left flex justify-between items-center">
-                                    Alterar PIN <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
-                                </button>
-                                <button
-                                    class="bg-red-600 text-white px-4 py-2 rounded-full w-full text-left flex justify-between items-center">
-                                    Bloquear Cartão <span class="material-symbols-outlined text-sm">block</span>
-                                </button>
-                            </div>
-                            <div class="mt-4 flex justify-end">
-                                <button id="close-services-modal-btn" type="button"
-                                    class="border border-primary text-primary px-4 py-2 rounded-full">Fechar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Modal de Sucesso -->
     <div id="success-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-success"
