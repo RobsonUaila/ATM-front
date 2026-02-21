@@ -81,7 +81,7 @@
 
                 </div>
             </div>
-            </div>
+
         </nav>
     </header>
     <main class="pt-16 md:pt-20">
@@ -95,42 +95,49 @@
             <div class="md:w-1/2">
                 <h2 class="text-xl font-bold text-primary dark:text-white">Transferencias</h2>
                 <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Faça transferencias de forma segura e rápida</p>
-                <button id="open-modal-btn" class="bg-primary text-white px-4 mt-4 py-2 rounded-md">Transferir</button>
+                <button id="open-modal-btn"
+                    class="bg-primary text-white w-full px-4 mt-4 py-2 rounded-full">Transferir</button>
             </div>
             <div class="md:w-1/2">
                 <h2 class="text-xl font-bold text-primary dark:text-white">Pagamentos</h2>
                 <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Faça pagamentos de forma segura e rápida</p>
-                <button class="bg-primary text-white px-4 mt-4 py-2 rounded-full">Pagar</button>
+                <button id="open-payments-modal-btn"
+                    class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Pagar</button>
             </div>
 
             <div class="md:w-1/2">
                 <h2 class="text-xl font-bold text-primary dark:text-white">Consultas</h2>
                 <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Cheque o seu saldo de forma segura e rápida</p>
-                <button class="bg-primary text-white px-4 mt-4 py-2 rounded-full">Consultas</button>
+                <button id="open-inquiries-modal-btn"
+                    class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Consultas</button>
             </div>
         </div>
 
         <div class="md:flex justify-center items-center gap-2 mt-10 p-2">
             <div class="md:w-1/2">
                 <h2 class="text-xl font-bold text-primary dark:text-white">Levantamento</h2>
-                <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Faça levantamentos de forma segura e rápida</p>
-                <button class="bg-primary text-white px-4 mt-4 py-2 rounded-full">Levantar</button>
+                <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Faça levantamentos de forma segura</p>
+                <button id="open-withdraw-modal-btn"
+                    class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Levantar</button>
             </div>
             <div class="md:w-1/2">
                 <h2 class="text-xl font-bold text-primary dark:text-white">Extrato</h2>
                 <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Faça extratos de forma segura e rápida</p>
-                <button class="bg-primary text-white px-4 mt-4 py-2 rounded-full">Extrato</button>
+                <button id="open-statement-modal-btn"
+                    class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Extrato</button>
             </div>
 
             <div class="md:w-1/2">
                 <h2 class="text-xl font-bold text-primary dark:text-white">Depositos</h2>
                 <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Faça depositos de forma segura e rápida</p>
-                <button class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Depositar</button>
+                <button id="open-deposit-modal-btn"
+                    class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Depositar</button>
             </div>
             <div class="md:w-1/2">
                 <h2 class="text-xl font-bold text-primary dark:text-white">Serviços do cartao</h2>
                 <p class="text-l text-gray-500 mt-2 dark:text-gray-400">Altere o Pin e outros servicos disponiveis</p>
-                <button class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Serviços</button>
+                <button id="open-services-modal-btn"
+                    class="bg-primary w-full text-white px-4 mt-4 py-2 rounded-full">Serviços</button>
             </div>
         </div>
     </main>
@@ -166,6 +173,7 @@
                                     class="bg-primary text-white px-4 py-2 rounded-full">Transferencia Interna</button>
                                 <button id="external-transfer-btn"
                                     class="bg-primary text-white px-4 py-2 rounded-full">Transferencia Externa</button>
+                                <br>
                                 <button id="close-modal-btn"
                                     class="border border-primary text-primary px-4 py-2 rounded-full">Fechar</button>
                             </div>
@@ -224,62 +232,379 @@
                         Escloha o tipo de operacao que deseja efectuar.
                     </p>
                     <div class="mt-4 flex gap-2 flex-wrap">
-                        <button class="bg-primary text-white px-4 py-2 rounded-full">Transferencia Para outro
+                        <button id="Transfer-bnt-external" type="button"
+                            class="bg-primary text-white px-4 py-2 rounded-full">Transferencia Para outro
                             Banco</button>
-                        <button class="bg-primary text-white px-4 py-2 rounded-full">Transferencia Para carteira
+                        <button id="Transfer-bnt-movel" type="button"
+                            class="bg-primary text-white px-4 py-2 rounded-full">Transferencia Para carteira
                             movel</button>
-                        <button class="bg-primary text-white px-4 py-2 rounded-full">Transferencia
-                            Internacional</button>
-                        <button type="button" id="cancel-transfer-btn"
-                            class="border border-primary text-primary px-4 py-2 rounded-full"">Voltar</button>
+                        <button id="Transfer-btn-internacional" type="button"
+                            class="bg-primary text-white px-4 py-2 rounded-full">Transferencia
+                            Internacional</button> <br>
+                        <button type="button" id="cancel-transfer-btn-external"
+                            class="border border-primary text-primary px-4 py-2 rounded-full">Voltar</button>
 
-                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Transferencia Para Outro Banco -->
+    <div id="transfer-modal-other-bank" class="hidden fixed inset-0 z-50 overflow-y-auto"
+        aria-labelledby="modal-title-other-bank" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div id="modal-overlay-other-bank" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white" id="modal-title-other-bank">
+                        Transferencia Interbancária</h3>
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Dados para transferencia interbancária.</p>
+                    <form class="mt-4 space-y-3">
+                        <input type="text" placeholder="IBAN ou Número da Conta" class="rounded-full w-full">
+                        <input type="text" placeholder="Nome do Beneficiário" class="rounded-full w-full">
+                        <input type="text" placeholder="Montante" class="rounded-full w-full">
+                        <div class="flex gap-2 mt-4">
+                            <button id="confirm-other-bank-btn" type="button"
+                                class="bg-primary text-white px-4 py-2 rounded-full">Confirmar</button>
+                            <button id="cancel-other-bank-btn" type="button"
+                                class="border border-primary text-primary px-4 py-2 rounded-full">Voltar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Transferencia Carteira Movel -->
+    <div id="transfer-modal-mobile" class="hidden fixed inset-0 z-50 overflow-y-auto"
+        aria-labelledby="modal-title-mobile" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div id="modal-overlay-mobile" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white" id="modal-title-mobile">
+                        Carteira Móvel</h3>
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Transferencia para carteira móvel.</p>
+                    <form class="mt-4 space-y-3">
+                        <input type="text" placeholder="Número de Telefone" class="rounded-full w-full">
+                        <div class="relative">
+                            <select
+                                class="rounded-full w-full appearance-none bg-white dark:bg-background-dark border border-gray-300 text-gray-700 py-2 px-4 pr-8 leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                                <option>Unitel Money</option>
+                                <option>Afrimoney</option>
+                            </select>
+                        </div>
+                        <input type="text" placeholder="Montante" class="rounded-full w-full">
+                        <div class="flex gap-2 mt-4">
+                            <button id="confirm-mobile-btn" type="button"
+                                class="bg-primary text-white px-4 py-2 rounded-full">Confirmar</button>
+                            <button id="cancel-mobile-btn" type="button"
+                                class="border border-primary text-primary px-4 py-2 rounded-full">Voltar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Transferencia Internacional -->
+    <div id="transfer-modal-international" class="hidden fixed inset-0 z-50 overflow-y-auto"
+        aria-labelledby="modal-title-international" role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div id="modal-overlay-international" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
+                        id="modal-title-international">Transferencia Internacional</h3>
+                    <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Dados para transferencia internacional.</p>
+                    <form class="mt-4 space-y-3">
+                        <input type="text" placeholder="IBAN / SWIFT" class="rounded-full w-full">
+                        <input type="text" placeholder="Banco de Destino" class="rounded-full w-full">
+                        <input type="text" placeholder="Montante" class="rounded-full w-full">
+                        <input type="text" placeholder="Descrição" class="rounded-full w-full">
+                        <div class="flex gap-2 mt-4">
+                            <button id="confirm-international-btn" type="button"
+                                class="bg-primary text-white px-4 py-2 rounded-full">Confirmar</button>
+                            <button id="cancel-international-btn" type="button"
+                                class="border border-primary text-primary px-4 py-2 rounded-full">Voltar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Pagamentos -->
+    <div id="payments-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-payments"
+        role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div id="payments-overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 sm:mx-0 sm:h-10 sm:w-10">
+                            <span class="material-symbols-outlined text-primary dark:text-white">payments</span>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
+                                id="modal-title-payments">Pagamentos</h3>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Realize pagamentos de serviços.</p>
+                            <form class="mt-4 space-y-3">
+                                <input type="text" placeholder="Entidade" class="rounded-full w-full">
+                                <input type="text" placeholder="Referência" class="rounded-full w-full">
+                                <input type="text" placeholder="Montante" class="rounded-full w-full">
+                                <div class="flex gap-2 mt-4">
+                                    <button type="button"
+                                        class="bg-primary text-white px-4 py-2 rounded-full">Confirmar</button>
+                                    <button id="close-payments-modal-btn" type="button"
+                                        class="border border-primary text-primary px-4 py-2 rounded-full">Fechar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Consultas -->
+    <div id="inquiries-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-inquiries"
+        role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div id="inquiries-overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 sm:mx-0 sm:h-10 sm:w-10">
+                            <span
+                                class="material-symbols-outlined text-primary dark:text-white">account_balance_wallet</span>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
+                                id="modal-title-inquiries">Consultas</h3>
+                            <div class="mt-4 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Saldo Disponível</p>
+                                <p class="text-2xl font-bold text-primary dark:text-white">150.000,00 Kz</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400 mt-2">Saldo Contabilístico</p>
+                                <p class="text-lg font-semibold text-gray-700 dark:text-gray-300">150.000,00 Kz</p>
+                            </div>
+                            <div class="mt-4 flex justify-end">
+                                <button id="close-inquiries-modal-btn" type="button"
+                                    class="border border-primary text-primary px-4 py-2 rounded-full">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Levantamento -->
+    <div id="withdraw-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-withdraw"
+        role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div id="withdraw-overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 sm:mx-0 sm:h-10 sm:w-10">
+                            <span class="material-symbols-outlined text-primary dark:text-white">atm</span>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
+                                id="modal-title-withdraw">Levantamento sem Cartão</h3>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Gere um código para levantamento.
+                            </p>
+                            <form class="mt-4 space-y-3">
+                                <input type="text" placeholder="Montante" class="rounded-full w-full">
+                                <div class="flex gap-2 mt-4">
+                                    <button type="button" class="bg-primary text-white px-4 py-2 rounded-full">Gerar
+                                        Código</button>
+                                    <button id="close-withdraw-modal-btn" type="button"
+                                        class="border border-primary text-primary px-4 py-2 rounded-full">Fechar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Extrato -->
+    <div id="statement-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-statement"
+        role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div id="statement-overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 sm:mx-0 sm:h-10 sm:w-10">
+                            <span class="material-symbols-outlined text-primary dark:text-white">receipt_long</span>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
+                                id="modal-title-statement">Extrato</h3>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Selecione o período.</p>
+                            <form class="mt-4 space-y-3">
+                                <div class="grid grid-cols-2 gap-2">
+                                    <input type="date" class="rounded-full w-full" placeholder="Data Início">
+                                    <input type="date" class="rounded-full w-full" placeholder="Data Fim">
+                                </div>
+                                <div class="flex gap-2 mt-4">
+                                    <button type="button"
+                                        class="bg-primary text-white px-4 py-2 rounded-full">Consultar</button>
+                                    <button id="close-statement-modal-btn" type="button"
+                                        class="border border-primary text-primary px-4 py-2 rounded-full">Fechar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Depósitos -->
+    <div id="deposit-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-deposit"
+        role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div id="deposit-overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 sm:mx-0 sm:h-10 sm:w-10">
+                            <span class="material-symbols-outlined text-primary dark:text-white">savings</span>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
+                                id="modal-title-deposit">Depósitos</h3>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Realize um depósito.</p>
+                            <form class="mt-4 space-y-3">
+                                <input type="text" placeholder="Montante" class="rounded-full w-full">
+                                <input type="text" placeholder="Conta Destino (Opcional)" class="rounded-full w-full">
+                                <div class="flex gap-2 mt-4">
+                                    <button type="button"
+                                        class="bg-primary text-white px-4 py-2 rounded-full">Depositar</button>
+                                    <button id="close-deposit-modal-btn" type="button"
+                                        class="border border-primary text-primary px-4 py-2 rounded-full">Fechar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Serviços -->
+    <div id="services-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-services"
+        role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div id="services-overlay" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-primary/10 sm:mx-0 sm:h-10 sm:w-10">
+                            <span class="material-symbols-outlined text-primary dark:text-white">settings</span>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left w-full">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
+                                id="modal-title-services">Serviços do Cartão</h3>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Gerencie o seu cartão.</p>
+                            <div class="mt-4 flex flex-col gap-2">
+                                <button
+                                    class="bg-primary text-white px-4 py-2 rounded-full w-full text-left flex justify-between items-center">
+                                    Alterar PIN <span class="material-symbols-outlined text-sm">arrow_forward_ios</span>
+                                </button>
+                                <button
+                                    class="bg-red-600 text-white px-4 py-2 rounded-full w-full text-left flex justify-between items-center">
+                                    Bloquear Cartão <span class="material-symbols-outlined text-sm">block</span>
+                                </button>
+                            </div>
+                            <div class="mt-4 flex justify-end">
+                                <button id="close-services-modal-btn" type="button"
+                                    class="border border-primary text-primary px-4 py-2 rounded-full">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal de Sucesso -->
-    <div id=" success-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-success"
-                            role="dialog" aria-modal="true">
-                            <div
-                                class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-                                <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
-                                    aria-hidden="true"></div>
-                                <span class="hidden sm:inline-block sm:align-middle sm:h-screen"
-                                    aria-hidden="true">&#8203;</span>
-                                <div
-                                    class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full">
-                                    <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-                                        <div class="sm:flex sm:items-start">
-                                            <div
-                                                class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
-                                                <span
-                                                    class="material-symbols-outlined text-green-600">check_circle</span>
-                                            </div>
-                                            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                                                <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
-                                                    id="modal-title-success">
-                                                    Sucesso!
-                                                </h3>
-                                                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
-                                                    A sua transferencia foi realizada com sucesso.
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div
-                                        class="bg-gray-50 dark:bg-background-dark/50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-                                        <button id="close-success-btn" type="button"
-                                            class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white hover:bg-primary/90 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm">
-                                            Concluir
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+    <div id="success-modal" class="hidden fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title-success"
+        role="dialog" aria-modal="true">
+        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+            <div
+                class="inline-block align-bottom bg-white dark:bg-background-dark rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full">
+                <div class="bg-white dark:bg-background-dark px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                    <div class="sm:flex sm:items-start">
+                        <div
+                            class="mx-auto shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 sm:mx-0 sm:h-10 sm:w-10">
+                            <span class="material-symbols-outlined text-green-600">check_circle</span>
+                        </div>
+                        <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                            <h3 class="text-lg leading-6 font-medium text-gray-900 dark:text-white"
+                                id="modal-title-success">
+                                Sucesso!
+                            </h3>
+                            <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">
+                                A sua transferencia foi realizada com sucesso.
+                            </p>
+                        </div>
                     </div>
+                </div>
+                <div class="bg-gray-50 dark:bg-background-dark/50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                    <button id="close-success-btn" type="button"
+                        class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-primary text-base font-medium text-white hover:bg-primary/90 focus:outline-none sm:ml-3 sm:w-auto sm:text-sm">
+                        Concluir
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                    <script src="assets/js/modal.js"></script>
+
+
+    <script src="assets/js/modal.js"></script>
 </body>
 
 </html>
