@@ -4,6 +4,8 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 import atmRouter from "./routers/atmRouter.js";
+import transacaoRouter from './routers/transacaoRouter.js';
+
 
 dotenv.config();
 
@@ -33,6 +35,7 @@ app.get("/", (req, res) => {
 
 // Rotas do backend
 app.use("/atm", atmRouter);
+app.use('/api', transacaoRouter);
 
 // Iniciar servidor
 const porta = process.env.PORT || 3000;

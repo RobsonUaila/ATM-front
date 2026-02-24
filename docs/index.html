@@ -1,17 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acessar ATM</title>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0a182e",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#121820",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .atm-gradient {
+            background: linear-gradient(135deg, #0a182e 0%, #1a2a44 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
 </head>
-<body>
-    <form id="formLogin">
-        <h1>Bem vindo ao ATM da primepay</h1>
-        <input type="text" id="numeroConta" placeholder="Número da conta" required>
-         <input type="password" id="PIN" placeholder="PIN" required>
-        <button type="submit">Acessar ATM</button>
-    </form>
-    <script type="module" src="assets/js/atm.js"></script>
-</body>
-</html>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center p-4 md:p-8">
+<!-- Main ATM Container -->
+<div class="w-full max-w-[500px] bg-white dark:bg-slate-900 rounded-xl shadow-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<!-- Left Side: Branding & Inputs -->
+<div class="p-8 flex flex-col justify-between">
+<div>
+<!-- TopAppBar Style Header -->
+<div class="flex items-center mb-8 gap-3">
+<div class="bg-primary text-white p-2 rounded-lg">
+<span class="material-symbols-outlined text-3xl">lock</span>
+</div>
+<h2 class="text-primary dark:text-slate-100 text-2xl font-bold tracking-tight">PrimePay ATM</h2>
+</div>
+<h1 class="text-slate-900 dark:text-white text-3xl font-bold leading-tight mb-8">
+                        Bem-vindo ao ATM da PrimePay
+                    </h1>
+<form class="space-y-6" id="formLogin">
+<!-- Account Number Input -->
+<div class="flex flex-col gap-2">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-semibold uppercase tracking-wider" for="numeroConta">Número da conta</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">account_balance_wallet</span>
+<input class="form-input w-full pl-12 pr-4 h-14 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent text-lg transition-all" id="numeroConta" name="numeroConta" placeholder="0000-0000-0000" type="text"/>
+</div>
+</div>
+<!-- PIN Input -->
+<div class="flex flex-col gap-2">
+<label class="text-slate-700 dark:text-slate-300 text-sm font-semibold uppercase tracking-wider" for="PIN">PIN</label>
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-4 text-slate-400">key</span>
+<input class="form-input w-full pl-12 pr-12 h-14 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary focus:border-transparent text-lg tracking-[0.5em] transition-all" id="PIN" maxlength="4" name="PIN" placeholder="****" type="password"/>
+<button class="absolute right-4 text-slate-400 hover:text-primary transition-colors" type="button">
+<span class="material-symbols-outlined">visibility</span>
+</button>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full bg-primary hover:bg-slate-800 text-white h-16 rounded-lg font-bold text-lg flex items-center justify-center gap-3 transition-all transform active:scale-[0.98] shadow-lg" type="submit">
+<span class="truncate">Acessar ATM</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Footer Info -->
+<div class="mt-12 flex items-center justify-between text-slate-400 text-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span>Conexão Segura</span>
+</div>
+<span>v2.4.0-release</span>
+</div>
+</div>
+<!-- Right Side: Keypad & Visuals -->
+
+</div>
+<!-- Background Element -->
+<div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_120%,rgba(10,24,46,0.1),transparent)] pointer-events-none"></div>
+</div>
+<!-- Script assets -->
+<script src="assets/js/atm.js"></script>
+</body></html>

@@ -1,11 +1,187 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultas</title>
+    <title>ATM</title>
 </head>
+
 <body>
-    
+
+<header>
+    <nav>
+        <div>
+            <div>
+                <div>
+                    <span>account_balance</span>
+                </div>
+                <span>PrimePay</span>
+            </div>
+            <button>
+                <span>menu</span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <h1>Menu de Transacoes</h1>
+
+    <div>
+        <div>
+            <h2>Transferencias</h2>
+            <p>Faça transferencias de forma segura e rápida</p>
+            <button id="open-modal-btn">Transferir</button>
+        </div>
+        <div>
+            <h2>Consultas</h2>
+            <p>Cheque o seu saldo de forma segura e rápida</p>
+            <button id="open-inquiries-modal-btn">Consultas</button>
+        </div>
+        <div>
+            <h2>Extrato</h2>
+            <p>Faça extratos de forma segura e rápida</p>
+            <button id="open-statement-modal-btn">Extrato</button>
+        </div>
+        <div>
+            <h2>Depositos</h2>
+            <p>Faça depositos de forma segura e rápida</p>
+            <button id="open-deposit-modal-btn">Depositar</button>
+        </div>
+    </div>
+</main>
+
+<!-- Modal Transferencias -->
+<div id="transfer-modal" class="hidden">
+    <div id="modal-overlay"></div>
+    <div>
+        <h3>Nova Transferencia</h3>
+        <p>Indique qual tipo de transferencia deseja realizar.</p>
+        <div>
+            <button id="internal-transfer-btn">Transferencia Interna</button>
+            <button id="external-transfer-btn">Transferencia Externa</button>
+            <button id="close-modal-btn">Fechar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Transferencia Interna -->
+<div id="transfer-modal-internal" class="hidden">
+    <div id="modal-overlay1"></div>
+    <div>
+        <h3>Transferencia Interna</h3>
+        <p>Preencha os detalhes abaixo para realizar a transferencia.</p>
+        <form>
+            <input type="text" placeholder="Numero da conta ou NIB">
+            <input type="text" placeholder="Introduza o montante">
+            <input type="text" placeholder="Descricao">
+            <button id="confirm-transfer-btn" type="button">Confirmar</button>
+            <button id="cancel-transfer-btn" type="button">Voltar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Transferencia Externa -->
+<div id="transfer-modal-external" class="hidden">
+    <div id="modal-overlay2"></div>
+    <div>
+        <h3>Transferencia Externa</h3>
+        <p>Escolha o tipo de operacao que deseja efectuar.</p>
+        <div>
+            <button id="Transfer-bnt-external" type="button">Transferencia Para outro Banco</button>
+            <button id="Transfer-bnt-movel" type="button">Transferencia Para carteira movel</button>
+            <button id="Transfer-btn-internacional" type="button">Transferencia Internacional</button>
+            <button type="button" id="cancel-transfer-btn-external">Voltar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Carteira Movel -->
+<div id="transfer-modal-mobile" class="hidden">
+    <div id="modal-overlay-mobile"></div>
+    <div>
+        <h3>Carteira Móvel</h3>
+        <p>Transferencia para carteira móvel.</p>
+        <form>
+            <input type="text" placeholder="Número de Telefone">
+            <select>
+                <option>Unitel Money</option>
+                <option>Afrimoney</option>
+            </select>
+            <input type="text" placeholder="Montante">
+            <button id="confirm-mobile-btn" type="button">Confirmar</button>
+            <button id="cancel-mobile-btn" type="button">Voltar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Internacional -->
+<div id="transfer-modal-international" class="hidden">
+    <div id="modal-overlay-international"></div>
+    <div>
+        <h3>Transferencia Internacional</h3>
+        <p>Dados para transferencia internacional.</p>
+        <form>
+            <input type="text" placeholder="IBAN / SWIFT">
+            <input type="text" placeholder="Banco de Destino">
+            <input type="text" placeholder="Montante">
+            <input type="text" placeholder="Descrição">
+            <button id="confirm-international-btn" type="button">Confirmar</button>
+            <button id="cancel-international-btn" type="button">Voltar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Consultas -->
+<div id="inquiries-modal" class="hidden">
+    <div id="inquiries-overlay"></div>
+    <div>
+        <h3>Consultas</h3>
+        <p>Saldo Disponível: 150.000,00 mts</p>
+        <p>Saldo Contabilístico: 150.000,00 mts</p>
+        <button id="close-inquiries-modal-btn">Fechar</button>
+    </div>
+</div>
+
+<!-- Modal Extrato -->
+<div id="statement-modal" class="hidden">
+    <div id="statement-overlay"></div>
+    <div>
+        <h3>Extrato</h3>
+        <form>
+            <input type="date" placeholder="Data Início">
+            <input type="date" placeholder="Data Fim">
+            <button type="button">Consultar</button>
+            <button id="close-statement-modal-btn" type="button">Fechar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Depositos -->
+<div id="deposit-modal" class="hidden">
+    <div id="deposit-overlay"></div>
+    <div>
+        <h3>Depósitos</h3>
+        <form>
+            <input type="text" placeholder="Montante">
+            <input type="text" placeholder="Conta Destino (Opcional)">
+            <button type="button">Depositar</button>
+            <button id="close-deposit-modal-btn" type="button">Fechar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Sucesso -->
+<div id="success-modal" class="hidden">
+    <div></div>
+    <div>
+        <h3>Sucesso!</h3>
+        <p>A sua transferencia foi realizada com sucesso.</p>
+        <button id="close-success-btn" type="button">Concluir</button>
+    </div>
+</div>
+
+<script src="../assets/js/modal.js"></script>
 </body>
 </html>

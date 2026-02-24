@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <div>
+            <div>
+                <div>
+                    <span>account_balance</span>
+                </div>
+                <span>PrimePay</span>
+            </div>
+            <button id="menu-btn">
+                <span>menu</span>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <h1>Menu de Transacoes</h1>
+
+    <div>
+        <div>
+            <h2>Transferencias</h2>
+            <p>Faça transferencias de forma segura e rápida</p>
+            <button id="open-modal-btn">Transferir</button>
+        </div>
+        <div>
+            <h2>Consultas</h2>
+            <p>Cheque o seu saldo de forma segura e rápida</p>
+            <button id="open-inquiries-modal-btn">Consultas</button>
+        </div>
+        <div>
+            <h2>Extrato</h2>
+            <p>Faça extratos de forma segura e rápida</p>
+            <button id="open-statement-modal-btn">Extrato</button>
+        </div>
+        <div>
+            <h2>Depositos</h2>
+            <p>Faça depositos de forma segura e rápida</p>
+            <button id="open-deposit-modal-btn">Depositar</button>
+        </div>
+    </div>
+</main>
+
+<!-- Modal Transferencias Interna -->
+<div id="transfer-modal-internal" class="hidden">
+    <div>
+        <h3>Transferencia Interna</h3>
+        <form id="form-transfer-internal">
+            <input type="text" name="conta" placeholder="Numero da conta ou NIB" required>
+            <input type="number" name="montante" placeholder="Montante" required>
+            <input type="text" name="descricao" placeholder="Descricao">
+            <button type="submit">Confirmar</button>
+            <button type="button" id="cancel-transfer-btn">Voltar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Depositos -->
+<div id="deposit-modal" class="hidden">
+    <div>
+        <h3>Depósitos</h3>
+        <form id="form-deposit">
+            <input type="number" name="montante" placeholder="Montante" required>
+            <input type="text" name="conta" placeholder="Conta Destino (Opcional)">
+            <button type="submit">Depositar</button>
+            <button type="button" id="close-deposit-modal-btn">Fechar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Consultas -->
+<div id="inquiries-modal" class="hidden">
+    <div>
+        <h3>Consultas</h3>
+        <p id="saldo-disponivel">Saldo Disponível: --</p>
+        <p id="saldo-contabilistico">Saldo Contabilístico: --</p>
+        <button id="close-inquiries-modal-btn">Fechar</button>
+    </div>
+</div>
+
+<!-- Modal Extrato -->
+<div id="statement-modal" class="hidden">
+    <div>
+        <h3>Extrato</h3>
+        <form id="form-statement">
+            <input type="date" name="dataInicio" required>
+            <input type="date" name="dataFim" required>
+            <button type="submit">Consultar</button>
+            <button type="button" id="close-statement-modal-btn">Fechar</button>
+        </form>
+        <div id="extrato-result"></div>
+    </div>
+</div>
+
+<!-- Modal Sucesso -->
+<div id="success-modal" class="hidden">
+    <div>
+        <h3>Sucesso!</h3>
+        <p>A operação foi realizada com sucesso.</p>
+        <button id="close-success-btn" type="button">Concluir</button>
+    </div>
+</div>
+
+<script>
+// URLs do backend (NestJS)
+const BASE_URL = 'http://localhost:3000/api';
+
+// Transferência Interna
+document.getElementById('form-transfer-internal').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = {
+        conta: formData.get('conta'),
+        montante: parseFloat(formData.get('montante')),
+        descricao: formData.get('descricao')
+    };
+
+    try {
+        const res = await fetch(`${BASE_URL}/transferencias/interna`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if(res.ok) alert('Transferência realizada com sucesso!');
+    } catch (err) {
+        alert('Erro ao realizar a transferência');
+        console.error(err);
+    }
+});
+
+// Depósito
+document.getElementById('form-deposit').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = {
+        montante: parseFloat(formData.get('montante')),
+        conta: formData.get('conta')
+    };
+    try {
+        const res = await fetch(`${BASE_URL}/depositos`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        if(res.ok) alert('Depósito realizado com sucesso!');
+    } catch (err) {
+        alert('Erro ao realizar o depósito');
+        console.error(err);
+    }
+});
+
+// Consultas
+document.getElementById('open-inquiries-modal-btn').addEventListener('click', async () => {
+    try {
+        const res = await fetch(`${BASE_URL}/conta/saldo`);
+        const data = await res.json();
+        document.getElementById('saldo-disponivel').textContent = `Saldo Disponível: ${data.saldoDisponivel}`;
+        document.getElementById('saldo-contabilistico').textContent = `Saldo Contabilístico: ${data.saldoContabilistico}`;
+        document.getElementById('inquiries-modal').classList.remove('hidden');
+    } catch(err) {
+        alert('Erro ao consultar saldo');
+    }
+});
+
+// Extrato
+document.getElementById('form-statement').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const params = new URLSearchParams({
+        dataInicio: formData.get('dataInicio'),
+        dataFim: formData.get('dataFim')
+    });
+    try {
+        const res = await fetch(`${BASE_URL}/extrato?${params.toString()}`);
+        const data = await res.json();
+        document.getElementById('extrato-result').innerText = JSON.stringify(data, null, 2);
+    } catch(err) {
+        alert('Erro ao consultar extrato');
+    }
+});
+</script>
+
+</body>
+</html>
