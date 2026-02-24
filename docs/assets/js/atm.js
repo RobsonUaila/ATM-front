@@ -3,11 +3,14 @@ const formularioLogin = document.getElementById("formLogin");
 formularioLogin.addEventListener("submit", async function (evento) {
     evento.preventDefault();
 
+    const campoNumeroConta = document.getElementById("numeroConta"); // adiciona este input no HTML
+    const numeroConta = campoNumeroConta.value.trim();
+
     const campoPin = document.getElementById("PIN");
     const pin = campoPin.value.trim();
 
-    if (!pin) {
-        alert("Digite o PIN");
+    if (!numeroConta || !pin) {
+        alert("Digite número da conta e PIN");
         return;
     }
 
@@ -18,7 +21,7 @@ formularioLogin.addEventListener("submit", async function (evento) {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                 
+                numeroConta: numeroConta,
                 pin: pin
             })
         });
